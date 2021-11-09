@@ -31,7 +31,7 @@ body {
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-  background-color: white;
+  background-color: #171e33;
 }
 
 ul[class],

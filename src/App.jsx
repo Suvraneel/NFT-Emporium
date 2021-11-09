@@ -28,8 +28,8 @@ const styles = {
   content: {
     display: "flex",
     justifyContent: "center",
-    fontFamily: "Roboto, sans-serif",
-    color: "#041836",
+    fontFamily: "Playfair Display, sans-serif",
+    color: "#001529",
     marginTop: "130px",
     padding: "10px",
   },
@@ -37,11 +37,11 @@ const styles = {
     position: "fixed",
     zIndex: 1,
     width: "100%",
-    background: "#fff",
+    background: "#001529",
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    fontFamily: "Roboto, sans-serif",
+    fontFamily: "Playfair Display, Raleway, sans-serif",
     borderBottom: "2px solid rgba(0, 0, 0, 0.06)",
     padding: "0 10px",
     boxShadow: "0 1px 10px rgb(151 164 175 / 10%)",
@@ -69,7 +69,7 @@ const App = ({ isServerInfo }) => {
         <Header style={styles.header}>
           <Logo />
           <Menu
-            theme="light"
+            theme="dark"
             mode="horizontal"
             style={{
               display: "flex",
@@ -78,19 +78,19 @@ const App = ({ isServerInfo }) => {
               width: "100%",
               justifyContent: "center",
             }}
-            defaultSelectedKeys={["quickstart"]}
+            defaultSelectedKeys={["wallet"]}
           >
-            <Menu.Item key="quickstart">
+            {/* <Menu.Item key="quickstart">
               <NavLink to="/quickstart">🚀 Quick Start</NavLink>
-            </Menu.Item>
+            </Menu.Item> */}
             <Menu.Item key="wallet">
-              <NavLink to="/wallet">👛 Wallet</NavLink>
+              <NavLink to="/wallet">💳 Wallet</NavLink>
             </Menu.Item>
             <Menu.Item key="dex">
-              <NavLink to="/1inch">🏦 Dex</NavLink>
+              <NavLink to="/1inch">💱 Dex</NavLink>
             </Menu.Item>
             <Menu.Item key="balances">
-              <NavLink to="/erc20balance">💰 Balances</NavLink>
+              <NavLink to="/erc20balance">🪙 Balances</NavLink>
             </Menu.Item>
             <Menu.Item key="transfers">
               <NavLink to="/erc20transfers">💸 Transfers</NavLink>
@@ -99,7 +99,7 @@ const App = ({ isServerInfo }) => {
               <NavLink to="/nftBalance">🖼 NFTs</NavLink>
             </Menu.Item>
             <Menu.Item key="contract">
-              <NavLink to="/contract">📄 Contract</NavLink>
+              <NavLink to="/contract">📜 Contract</NavLink>
             </Menu.Item>
           </Menu>
           <div style={styles.headerRight}>
@@ -145,7 +145,7 @@ const App = ({ isServerInfo }) => {
         </div>
       </Router>
       <Footer style={{ textAlign: "center" }}>
-        <Text style={{ display: "block" }}>
+        {/* <Text style={{ display: "block" }}>
           ⭐️ Please star this{" "}
           <a
             href="https://github.com/ethereum-boilerplate/ethereum-boilerplate/"
@@ -155,9 +155,9 @@ const App = ({ isServerInfo }) => {
             boilerplate
           </a>
           , every star makes us very happy!
-        </Text>
+        </Text> */}
 
-        <Text style={{ display: "block" }}>
+        {/* <Text style={{ display: "block" }}>
           🙋 You have questions? Ask them on the {""}
           <a
             target="_blank"
@@ -166,9 +166,9 @@ const App = ({ isServerInfo }) => {
           >
             Moralis forum
           </a>
-        </Text>
+        </Text> */}
 
-        <Text style={{ display: "block" }}>
+        {/* <Text style={{ display: "block" }}>
           📖 Read more about{" "}
           <a
             target="_blank"
@@ -177,7 +177,7 @@ const App = ({ isServerInfo }) => {
           >
             Moralis
           </a>
-        </Text>
+        </Text> */}
       </Footer>
     </Layout>
   );

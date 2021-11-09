@@ -11,11 +11,11 @@ const styles = {
     alignItems: "center",
     width: "fit-content",
     borderRadius: "12px",
-    backgroundColor: "rgb(244, 244, 244)",
+    backgroundColor: "rgb(0,41,80)",
     cursor: "pointer",
   },
   text: {
-    color: "#21BF96",
+    color: "rgb(218,237,255)",
   },
 };
 

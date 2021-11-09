@@ -11,7 +11,7 @@ const styles = {
     alignItems: "center",
     height: "42px",
     fontWeight: "500",
-    fontFamily: "Roboto, sans-serif",
+    fontFamily: "Playfair Display, sans-serif",
     fontSize: "14px",
     padding: "0 10px",
   },

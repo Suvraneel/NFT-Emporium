@@ -1,0 +1,111 @@
+<html>
+  <head>
+    <!-- Moralis SDK code -->
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
+  </head>
+  <body>
+    <h1>IPFS Demo</h1>
+
+    <button id="btn-login" onclick="login()">Moralis Login</button>
+    <br />
+    <br />
+
+    <input
+      type="text"
+      name="metadataName"
+      id="metadataName"
+      placeholder="Metadata Name"
+    />
+    <br />
+    <br />
+    <input
+      type="text"
+      name="metadataDescription"
+      id="metadataDescription"
+      placeholder="Metadata Description"
+    />
+    <br />
+    <br />
+    <input type="file" name="fileInput" id="file" placeholder="File" />
+    <button onclick="toTheMoon()">To the moon</button>
+
+    <script>
+      // connect to Moralis server
+      Moralis.initialize("bF1Wa2B59a0vgGAGtxpOE6NzHimrmePa8wPpsyAN");
+      Moralis.serverURL = "https://d1qv5atvepad.usemoralis.com:2053/server";
+
+      const nftContractAddress = "0x351bbee7C6E9268A1BF741B098448477E08A0a53"; // Make this variable
+
+      // Ethereum Rinkeby 0x0Fb6EF3505b9c52Ed39595433a21aF9B5FCc4431
+      // Polygon Mumbai 0x351bbee7C6E9268A1BF741B098448477E08A0a53
+      // BSC Testnet 0x88624DD1c725C6A95E223170fa99ddB22E1C6DDD
+
+      const web3 = new Web3(window.ethereum);
+
+      login = async () => {
+        Moralis.Web3.authenticate().then(async (result) => {
+          console.log(result);
+          alert("Login successful");
+        });
+      };
+
+      toTheMoon = async () => {
+        // Storing the file
+
+        const fileInput = document.getElementById("file");
+        const data = fileInput.files[0];
+        const imageFile = new Moralis.File(data.name, data);
+        await imageFile.saveIPFS();
+
+        // Storing the metadata
+
+        const imageURI = imageFile.ipfs();
+        const metadata = {
+          name: document.getElementById("metadataName").value,
+          description: document.getElementById("metadataDescription").value,
+          image: imageURI,
+        };
+        const metadataFile = new Moralis.File("metadata.json", {
+          base64: btoa(JSON.stringify(metadata)),
+        });
+        await metadataFile.saveIPFS();
+        const metadataURI = metadataFile.ipfs();
+        console.log(metadataURI);
+        alert("Upload successful");
+
+        // minting
+
+        const txt = await mintToken(metadataURI);
+        console.log("Minted!!");
+      };
+
+      async function mintToken(_uri) {
+        const encodedFunction = web3.eth.abi.encodeFunctionCall(
+          {
+            name: "mintToken",
+            type: "function",
+            inputs: [
+              {
+                type: "string",
+                name: "tokenURI",
+              },
+            ],
+          },
+          [_uri]
+        );
+
+        const transactionParameters = {
+          to: nftContractAddress,
+          from: ethereum.selectedAddress,
+          data: encodedFunction,
+        };
+        const txt = await ethereum.request({
+          method: "eth_sendTransaction",
+          params: [transactionParameters],
+        });
+        return txt;
+      }
+    </script>
+  </body>
+</html>

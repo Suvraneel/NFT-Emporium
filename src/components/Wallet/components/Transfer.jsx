@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { useMoralis } from "react-moralis";
 import AddressInput from "../../AddressInput";
 import AssetSelector from "./AssetSelector";
+import { AwesomeButton } from "react-awesome-button";
 
 const styles = {
   card: {
@@ -104,8 +105,8 @@ function Transfer() {
           </div>
           <AssetSelector setAsset={setAsset} />
         </div>
-        <Button
-          type="primary"
+        <AwesomeButton
+          type="secondary"
           size="large"
           loading={isPending}
           style={{ width: "100%", marginTop: "25px" }}
@@ -113,7 +114,7 @@ function Transfer() {
           disabled={!tx}
         >
           Transfer💸
-        </Button>
+        </AwesomeButton>
       </div>
     </div>
   );

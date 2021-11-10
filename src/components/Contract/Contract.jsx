@@ -5,6 +5,9 @@ import Address from "components/Address/Address";
 import { useMoralis, useMoralisQuery } from "react-moralis";
 import { getEllipsisTxt } from "helpers/formatters";
 import { useEffect } from "react";
+import { AwesomeButton } from "react-awesome-button";
+import "react-awesome-button/dist/styles.css";
+
 
 const { Text } = Typography;
 
@@ -123,13 +126,13 @@ export default function Contract() {
                       {responses[item.name]?.result &&
                         `Response: ${JSON.stringify(responses[item.name]?.result)}`}
                     </Text>
-                    <Button
+                    <AwesomeButton
                       type="primary"
                       htmlType="submit"
                       loading={responses[item?.name]?.isLoading}
                     >
-                      {item.stateMutability === "view" ? "Read🔎" : "Transact💸"}
-                    </Button>
+                      {item.stateMutability === "view" ? "Read 👁️‍🗨️" : "Transact 💳"}
+                    </AwesomeButton>
                   </Form.Item>
                 </Form>
               </Card>

@@ -22,3 +22,26 @@
 .ant-menu.ant-menu-dark .ant-menu-item-selected, .ant-menu-submenu-popup.ant-menu-dark .ant-menu-item-selected {
 	background-color: rgb(0, 1, 8) !important;
 }
+.ant-card {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	color: rgba(255, 255, 255, 0.85);
+	font-size: 14px;
+	font-variant: tabular-nums;
+	line-height: 1.5715;
+	list-style: none;
+	font-feature-settings: 'tnum', "tnum";
+	position: relative;
+	background: rgba(0, 0, 0, 0.568);
+	border-radius: 5px;
+}
+.ant-typography strong {
+	font-weight: 600;
+	color: white;
+}
+.ant-layout, .ant-layout * {
+	box-sizing: border-box;
+	color: white;
+	font-family: "Raleway", Helvetica, sans-serif;
+}

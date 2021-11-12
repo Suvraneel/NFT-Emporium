@@ -23,6 +23,7 @@ import QuickStart from "components/QuickStart";
 import Contract from "components/Contract/Contract";
 import Text from "antd/lib/typography/Text";
 import Background from "components/diabloBG.jpg"
+import CreateNFT from "components/CreateNFT/CreateNFT";
 const { Header, Footer } = Layout;
 
 const styles = {
@@ -102,6 +103,9 @@ const App = ({ isServerInfo }) => {
             <Menu.Item key="contract">
               <NavLink to="/contract">📜 Contract</NavLink>
             </Menu.Item>
+            <Menu.Item key="createNFT">
+              <NavLink to="/createNFT">Create NFT</NavLink>
+            </Menu.Item>
           </Menu>
           <div style={styles.headerRight}>
             <Chains />
@@ -137,6 +141,9 @@ const App = ({ isServerInfo }) => {
             </Route>
             <Route path="/contract">
               <Contract />
+            </Route>
+            <Route path="/createNFT">
+              <CreateNFT />
             </Route>
             <Route path="/nonauthenticated">
               <>Please login using the "Authenticate" button</>

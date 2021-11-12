@@ -69,7 +69,7 @@ const App = ({ isServerInfo }) => {
     <Layout style={{ height: "100vh", overflow: "auto", backgroundImage: `url(${Background}`, backgroundSize: 'cover'}}>
       <Router>
         <Header style={styles.header}>
-          <Logo />
+          {/* <Logo /> */}
           <Menu
             theme="dark"
             mode="horizontal"
@@ -104,7 +104,7 @@ const App = ({ isServerInfo }) => {
               <NavLink to="/contract">📜 Contract</NavLink>
             </Menu.Item>
             <Menu.Item key="createNFT">
-              <NavLink to="/createNFT">Create NFT</NavLink>
+              <NavLink to="/createNFT">🖋️ Create NFT</NavLink>
             </Menu.Item>
           </Menu>
           <div style={styles.headerRight}>

@@ -1,6 +1,22 @@
 import React from "react";
 import Web3 from "web3";
 import "./CreateNFT.css";
+import {Card} from "antd";
+import { AwesomeButton } from "react-awesome-button";
+
+const styles = {
+  card: {
+    width: "25%",
+    boxShadow: "0 0.5rem 1.2rem rgb(189 197 209 / 20%)",
+    border: "1px solid #e7eaf3",
+    borderRadius: "0.5rem",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+
+};
+
+
 const Moralis = require("moralis");
 const Ethereum = new Web3(window.ethereum);
 
@@ -91,12 +107,18 @@ function CreateNFT() {
   }
 
   return (
-    <div>
-      <br />
-      <h1>IPFS Demo</h1>
-      {/* <button id="btn-login" onclick={login}>
+    <div style={{width:"100%", display:"flex", flexDirection: "column", flexWrap: "wrap", justifyContent: "space-between", alignItems: "center"}}>
+      <Card style={styles.card} bodyStyle={{ padding: "18px" }}
+        title={
+          <div>
+            IPFS Demo
+          </div>
+        }
+        size="large"
+      >
+      {/* <AwesomeButton type="secondary" id="btn-login" onclick={login}>
 				Moralis Login
-			</button> */}
+			</AwesomeButton> */}
       <input
         type="text"
         name="metadataName"
@@ -114,7 +136,13 @@ function CreateNFT() {
       <br />
       <br />
       <input type="file" name="fileInput" id="file" placeholder="File" />
-      <button onClick={toTheMoon}>To the moon</button>
+      <br />
+      <br />
+      <br />
+      <AwesomeButton type="primary" onClick={toTheMoon}>
+        "To the moon"
+      </AwesomeButton>
+      </Card>
     </div>
   );
 }

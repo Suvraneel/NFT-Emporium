@@ -131,12 +131,12 @@ const App = ({ isServerInfo }) => {
             <Route path="/1inch">
               <InchDex chain="eth" />
             </Route>
-            <Route path="/erc20balance">
+            {/* <Route path="/erc20balance">
               <ERC20Balance />
             </Route>
             <Route path="/erc20transfers">
               <ERC20Transfers />
-            </Route>
+            </Route> */}
             <Route path="/nftBalance">
               <NFTBalance />
             </Route>

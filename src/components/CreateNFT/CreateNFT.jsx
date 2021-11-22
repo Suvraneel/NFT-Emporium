@@ -1,8 +1,8 @@
 import React from "react";
 import Web3 from "web3";
 import "./CreateNFT.css";
-import {Card} from "antd";
-import { AwesomeButton } from "react-awesome-button";
+import { Card, Image, Tooltip, Modal, Input } from "antd";
+import { AwesomeButtonProgress } from "react-awesome-button";
 
 const styles = {
   card: {
@@ -13,7 +13,6 @@ const styles = {
     justifyContent: "space-between",
     alignItems: "center",
   },
-
 };
 
 
@@ -119,7 +118,7 @@ function CreateNFT() {
       {/* <AwesomeButton type="secondary" id="btn-login" onclick={login}>
 				Moralis Login
 			</AwesomeButton> */}
-      <input
+      <Input
         type="text"
         name="metadataName"
         id="metadataName"
@@ -127,7 +126,7 @@ function CreateNFT() {
       />
       <br />
       <br />
-      <input
+      <Input
         type="text"
         name="metadataDescription"
         id="metadataDescription"
@@ -135,13 +134,13 @@ function CreateNFT() {
       />
       <br />
       <br />
-      <input type="file" name="fileInput" id="file" placeholder="File" />
+      <Input type="file" name="fileInput" id="file" placeholder="File" />
       <br />
       <br />
       <br />
-      <AwesomeButton type="primary" onClick={toTheMoon}>
-        "To the moon"
-      </AwesomeButton>
+      <AwesomeButtonProgress type="primary" onClick={toTheMoon}>
+      🪙 Mint NFT !!!
+      </AwesomeButtonProgress>
       </Card>
     </div>
   );

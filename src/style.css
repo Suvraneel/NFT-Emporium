@@ -45,3 +45,108 @@
 	color: white;
 	font-family: "Raleway", Helvetica, sans-serif;
 }
+
+.ant-card-actions {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	background: rgba(0, 0, 0, 0.692) !important;
+	border-top: 1px solid #f0f0f0;
+}
+
+.ant-form-item-label > label {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	max-width: 100%;
+	height: 32px;
+	color: rgb(255, 255, 255) !important;
+	font-size: 14px;
+}
+
+.ant-btn {
+	line-height: 1.5715;
+	position: relative;
+	display: inline-block;
+	font-weight: 400;
+	white-space: nowrap;
+	text-align: center;
+	background-image: none;
+	border: 1px solid transparent;
+	box-shadow: 0 2px 0 rgba(0, 0, 0, 0.015);
+	cursor: pointer;
+	transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	touch-action: manipulation;
+	height: 32px;
+	padding: 4px 15px;
+	font-size: 14px;
+	border-radius: 2px;
+	color: rgba(0, 0, 0, 0.85);
+	border-color: #d9d9d9;
+	background: rgba(255, 255, 255, 0.164);
+}
+
+.ant-input {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-variant: tabular-nums;
+	list-style: none;
+	font-feature-settings: 'tnum', "tnum";
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	min-width: 0;
+	padding: 4px 11px;
+	color: rgba(0, 0, 0, 0.85);
+	font-size: 14px;
+	line-height: 1.5715;
+	background-color: rgba(0, 0, 0, 0);
+	background-image: none;
+	border: 1px solid #d9d9d9;
+	border-radius: 2px;
+	transition: all 0.3s;
+}
+
+.ant-input-affix-wrapper {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	min-width: 0;
+	padding: 4px 11px;
+	color: rgba(0, 0, 0, 0.85);
+	font-size: 14px;
+	line-height: 1.5715;
+	background-color: rgba(0, 0, 0, 0);
+	background-image: none;
+	border: 1px solid #d9d9d9;
+	border-radius: 2px;
+	transition: all 0.3s;
+	display: inline-flex;
+}
+
+.ant-input {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-variant: tabular-nums;
+	list-style: none;
+	font-feature-settings: 'tnum', "tnum", "tnum";
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	min-width: 0;
+	padding: 4px 11px;
+	color: rgb(255, 255, 255);
+	font-size: 14px;
+	line-height: 1.5715;
+	background-color: rgba(0, 0, 0, 0);
+	background-image: none;
+	border: 1px solid #d9d9d9;
+	border-radius: 2px;
+	transition: all 0.3s;
+}

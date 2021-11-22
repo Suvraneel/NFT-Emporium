@@ -8,6 +8,7 @@ import Text from "antd/lib/typography/Text";
 import { ArrowDownOutlined } from "@ant-design/icons";
 import useTokenPrice from "hooks/useTokenPrice";
 import { tokenValue } from "helpers/formatters";
+import { AwesomeButton } from "react-awesome-button";
 
 const styles = {
   card: {
@@ -314,7 +315,7 @@ function InchDex({ chain }) {
             <PriceSwap />
           </div>
         )}
-        <Button
+        <AwesomeButton
           type="primary"
           size="large"
           style={{
@@ -327,7 +328,7 @@ function InchDex({ chain }) {
           disabled={!ButtonState.isActive}
         >
           {ButtonState.text}
-        </Button>
+        </AwesomeButton>
       </Card>
       <Modal
         title="Select a token"

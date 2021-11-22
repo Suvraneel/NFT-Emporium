@@ -18,6 +18,9 @@ const styles = {
     maxWidth: "1000px",
     gap: "10px",
   },
+  Tooltip: {
+    color: "rgb(255,0,0)",
+  }
 };
 
 function NFTBalance() {

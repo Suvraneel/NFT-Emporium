@@ -100,30 +100,30 @@ const App = ({ isServerInfo }) => {
             <Menu.Item key="nft">
               <NavLink to="/nftBalance">🖼 NFTs</NavLink>
             </Menu.Item>
-            <Menu.Item key="contract">
+            {/* <Menu.Item key="contract">
               <NavLink to="/contract">📜 Contract</NavLink>
-            </Menu.Item>
+            </Menu.Item> */}
             <Menu.Item key="createNFT">
               <NavLink to="/createNFT">🖋️ Create NFT</NavLink>
             </Menu.Item>
           </Menu>
           <div style={styles.headerRight}>
             <Chains />
-            <TokenPrice
+            {/* <TokenPrice
               address="0x1f9840a85d5af5bf1d1762f925bdaddc4201f984"
               chain="eth"
               image="https://cloudflare-ipfs.com/ipfs/QmXttGpZrECX5qCyXbBQiqgQNytVGeZW5Anewvh2jc4psg/"
               size="40px"
-            />
+            /> */}
             <NativeBalance />
             <Account />
           </div>
         </Header>
         <div style={styles.content}>
           <Switch>
-            <Route path="/quickstart">
+            {/* <Route path="/quickstart">
               <QuickStart isServerInfo={isServerInfo} />
-            </Route>
+            </Route> */}
             <Route path="/wallet">
               <Wallet />
             </Route>
@@ -139,9 +139,9 @@ const App = ({ isServerInfo }) => {
             <Route path="/nftBalance">
               <NFTBalance />
             </Route>
-            <Route path="/contract">
+            {/* <Route path="/contract">
               <Contract />
-            </Route>
+            </Route> */}
             <Route path="/createNFT">
               <CreateNFT />
             </Route>
@@ -149,7 +149,7 @@ const App = ({ isServerInfo }) => {
               <>Please login using the "Authenticate" button</>
             </Route>
           </Switch>
-          <Redirect to="/quickstart" />
+          <Redirect to="/wallet" />
         </div>
       </Router>
     </Layout>

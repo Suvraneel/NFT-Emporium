@@ -6,7 +6,7 @@
 .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu-open::after,
 .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item-selected::after,
 .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu-selected::after {
-  border-bottom: 2px solid #00fff2 !important;
+  border-bottom: 2px solid #ea00ff !important;
 }
 
 .ant-menu-horizontal > .ant-menu-item-selected a,
@@ -14,10 +14,11 @@
   color: #00fff2 !important;
 }
 .ant-menu-dark.ant-menu-horizontal > .ant-menu-item:hover {
-	background-color: rgb(0, 1, 8) !important;
+	background-color: rgb(44, 61, 187) !important;
 }
 .ant-menu-dark .ant-menu-item, .ant-menu-dark .ant-menu-item-group-title, .ant-menu-dark .ant-menu-item > a, .ant-menu-dark .ant-menu-item > span > a {
 	color: rgb(255, 255, 255) !important;
+	/* on navbar */
 }
 .ant-menu.ant-menu-dark .ant-menu-item-selected, .ant-menu-submenu-popup.ant-menu-dark .ant-menu-item-selected {
 	background-color: rgb(0, 1, 8) !important;
@@ -38,10 +39,10 @@
 }
 .ant-typography strong {
 	font-weight: 600;
-	color: white;
+	color: rgb(255, 255, 255) !important;
 }
 .ant-layout, .ant-layout * {
 	box-sizing: border-box;
-	color: white;
+	color: rgb(199, 177, 79);
 	font-family: "Raleway", Helvetica, sans-serif;
 }

@@ -1,0 +1,38 @@
+.card {
+	align-items: center;
+	width: 100%;
+	color: yellow;
+	background-color: aqua;
+}
+
+.header {
+	text-align: center;
+}
+
+.input {
+	width: 100%;
+	font-size: 16px;
+	font-weight: 700;
+	border: none;
+	background-color: rgb(26, 26, 26);
+    color: #041836;
+}
+
+.select {
+	margin-top: 20px;
+	display: flex;
+	align-items: center;
+}
+
+.textWrapper {
+	max-width: 80px;
+    color: #041836;
+	width: 100%;
+}
+
+.row {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	flex-direction: row;
+}

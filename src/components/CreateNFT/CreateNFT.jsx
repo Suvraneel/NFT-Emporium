@@ -1,6 +1,8 @@
 import React from "react";
+import { AwesomeButton } from "react-awesome-button";
 import Web3 from "web3";
 import "./CreateNFT.css";
+
 import { Card, Image, Tooltip, Modal, Input, Button } from "antd";
 import { AwesomeButtonProgress } from "react-awesome-button";
 
@@ -15,8 +17,8 @@ const styles = {
   },
 };
 
+
 const Moralis = require("moralis");
-const Ethereum = new Web3(window.ethereum);
 
 function CreateNFT() {
   Moralis.initialize(process.env.REACT_APP_MORALIS_APPLICATION_ID);
@@ -107,6 +109,7 @@ function CreateNFT() {
   }
 
   return (
+
     <div
       style={{
         width: "100%",
@@ -121,6 +124,7 @@ function CreateNFT() {
         style={styles.card}
         bodyStyle={{ padding: "18px" }}
         title={<div>IPFS Demo</div>}
+
         size="large"
       >
         {/* <AwesomeButton type="secondary" id="btn-login" onclick={login}>

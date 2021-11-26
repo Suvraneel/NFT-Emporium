@@ -11,9 +11,11 @@ const styles = {
     alignItems: "center",
     height: "42px",
     fontWeight: "500",
-    fontFamily: "Playfair Display, sans-serif",
+    fontFamily: "sans-serif",
     fontSize: "14px",
     padding: "0 10px",
+    backgroundColor: "black",
+    color: "white",
   },
   button: {
     border: "2px solid rgb(231, 234, 243)",

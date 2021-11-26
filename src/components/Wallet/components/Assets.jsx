@@ -1,5 +1,5 @@
-import { useERC20Balance } from "hooks/useERC20Balance";
 import { useMoralis } from "react-moralis";
+import { useERC20Balance } from "hooks/useERC20Balance";
 
 const styles = {
   content: {
@@ -46,7 +46,7 @@ export default function Assets() {
               />
             ) : (
               <img
-                src="https://etherscan.io/images/main/empty-token.png"
+                // src="https://etherscan.io/images/main/empty-token.png"
                 alt=""
                 style={{
                   maxWidth: "35px",
@@ -59,7 +59,7 @@ export default function Assets() {
           <div style={styles.right}>
             <h4 style={styles.text}>{item.symbol}</h4>
             <h4 style={styles.text}>
-              {parseFloat(Moralis.Units.FromWei(item.balance, item.decimals).toFixed(6))}
+              {parseFloat(Moralis.Units.FromWei(item.balance, item.decimals).toFixed(2))}
             </h4>
           </div>
         </div>

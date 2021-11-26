@@ -2,7 +2,21 @@ import React from "react";
 import { AwesomeButton } from "react-awesome-button";
 import Web3 from "web3";
 import "./CreateNFT.css";
-import {Card} from "antd";
+
+import { Card, Image, Tooltip, Modal, Input, Button } from "antd";
+import { AwesomeButtonProgress } from "react-awesome-button";
+
+const styles = {
+  card: {
+    width: "25%",
+    boxShadow: "0 0.5rem 1.2rem rgb(189 197 209 / 20%)",
+    border: "1px solid #e7eaf3",
+    borderRadius: "0.5rem",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+};
+
 
 const Moralis = require("moralis");
 
@@ -59,8 +73,10 @@ function CreateNFT() {
 
     // minting
 
-    const txt = await mintToken(metadataURI);
-    console.log("Minted!!" + txt);
+    const txt = await mintToken(metadataURI).then((result) => {
+      console.log(result);
+      alert("Token minted");
+    });
   };
 
   async function mintToken(_uri) {
@@ -93,41 +109,51 @@ function CreateNFT() {
   }
 
   return (
-    <div className="createNFT">
-      <Card className="card" bodyStyle={{ padding: "18px" }}
-        title={
-          <div>
-            IPFS Demo
-          </div>
-        }
+
+    <div
+      style={{
+        width: "100%",
+        display: "flex",
+        flexDirection: "column",
+        flexWrap: "wrap",
+        justifyContent: "space-between",
+        alignItems: "center",
+      }}
+    >
+      <Card
+        style={styles.card}
+        bodyStyle={{ padding: "18px" }}
+        title={<div>IPFS Demo</div>}
+
         size="large"
       >
-      {/* <AwesomeButton type="secondary" id="btn-login" onclick={login}>
+        {/* <AwesomeButton type="secondary" id="btn-login" onclick={login}>
 				Moralis Login
 			</AwesomeButton> */}
-      <input
-        type="text"
-        name="metadataName"
-        id="metadataName"
-        placeholder="Metadata Name"
-      />
-      <br />
-      <br />
-      <input
-        type="text"
-        name="metadataDescription"
-        id="metadataDescription"
-        placeholder="Metadata Description"
-      />
-      <br />
-      <br />
-      <input type="file" name="fileInput" id="file" placeholder="File" />
-      <br />
-      <br />
-      <br />
-      <AwesomeButton type="primary" onClick={toTheMoon}>
-        "To the moon"
-      </AwesomeButton>
+        <Input
+          type="text"
+          name="metadataName"
+          id="metadataName"
+          placeholder="Metadata Name"
+        />
+        <br />
+        <br />
+        <Input
+          type="text"
+          name="metadataDescription"
+          id="metadataDescription"
+          placeholder="Metadata Description"
+        />
+        <br />
+        <br />
+        <Input type="file" name="fileInput" id="file" placeholder="File" />
+        <br />
+        <br />
+        <br />
+
+        <AwesomeButtonProgress type="secondary" onPress={toTheMoon}>
+          To the Moon
+        </AwesomeButtonProgress>
       </Card>
     </div>
   );

@@ -5,6 +5,7 @@ import "./CreateNFT.css";
 
 import { Card, Image, Tooltip, Modal, Input, Button } from "antd";
 import { AwesomeButtonProgress } from "react-awesome-button";
+import Chains from "components/Chains";
 
 const styles = {
   card: {
@@ -49,20 +50,21 @@ function CreateNFT() {
 
   const toTheMoon = async () => {
     // Storing the file
-
     const fileInput = document.getElementById("file");
     const data = fileInput.files[0];
     const imageFile = new Moralis.File(data.name, data);
     await imageFile.saveIPFS();
 
     // Storing the metadata
-
+    
     const imageURI = imageFile.ipfs();
     const metadata = {
       name: document.getElementById("metadataName").value,
       description: document.getElementById("metadataDescription").value,
       image: imageURI,
     };
+
+
     const metadataFile = new Moralis.File("metadata.json", {
       base64: btoa(JSON.stringify(metadata)),
     });
@@ -149,14 +151,17 @@ function CreateNFT() {
         <Input type="file" name="fileInput" id="file" placeholder="File" />
         <br />
         <br />
+        <Chains />
         <br />
 
-        <AwesomeButtonProgress type="secondary" onPress={toTheMoon}>
+        <AwesomeButtonProgress type="primary" onPress={toTheMoon}>
           To the Moon
         </AwesomeButtonProgress>
       </Card>
     </div>
   );
 }
+
+// onClick={document.getElementById("metadataName").value && document.getElementById("metadataDescription").value && document.getElementById("file").value ? toTheMoon : alert("hell")}
 
 export default CreateNFT;

@@ -196,7 +196,7 @@ function Forge() {
       .then(alert("Your character is getting forged!!"));
   };
   const [image, setImage] = useState("");
-  const [mythic, setMythic] = useState("");
+  const [mythic, setMythic] = useState("centaur");
 
   const getCharacter = async () => {
     await window.ethereum.enable();

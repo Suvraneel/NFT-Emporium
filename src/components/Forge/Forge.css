@@ -1,0 +1,27 @@
+.createNFT {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+}
+
+input {
+	background-color: rgba(0, 0, 0, 0.315);
+}
+
+.card {
+	width: 250px;
+	box-shadow: 0 0.5rem 1.2rem rgb(189 197 209 / 20%);
+	border: 1px solid #e7eaf3;
+	border-radius: 0.5rem;
+	justify-content: space-between;
+	align-items: center;
+}
+
+@media screen and (min-width: 350px) {
+	.card {
+		width: 300px;
+	}
+}

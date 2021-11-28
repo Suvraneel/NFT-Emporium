@@ -11,7 +11,6 @@ import Account from "components/Account";
 import Chains from "components/Chains";
 import TokenPrice from "components/TokenPrice";
 import ERC20Balance from "components/ERC20Balance";
-import ERC20Transfers from "components/ERC20Transfers";
 import InchDex from "components/InchDex";
 import NFTBalance from "components/NFTBalance";
 import Wallet from "components/Wallet";
@@ -24,6 +23,7 @@ import Contract from "components/Contract/Contract";
 import Text from "antd/lib/typography/Text";
 import Background from "components/diabloBG.jpg"
 import CreateNFT from "components/CreateNFT/CreateNFT";
+import Forge from "components/Forge/Forge";
 import { ReactComponent as Logo } from './nftLogo.svg';
 const { Header, Footer } = Layout;
 
@@ -107,6 +107,9 @@ const App = ({ isServerInfo }) => {
             <Menu.Item key="createNFT">
               <NavLink to="/createNFT">🖋️ Create NFT</NavLink>
             </Menu.Item>
+            <Menu.Item key="Forge">
+              <NavLink to="/Forge">🖋️ Forge</NavLink>
+            </Menu.Item>
           </Menu>
           <div style={styles.headerRight}>
             <Chains />
@@ -145,6 +148,9 @@ const App = ({ isServerInfo }) => {
             </Route> */}
             <Route path="/createNFT">
               <CreateNFT />
+            </Route>
+            <Route path="/Forge">
+              <Forge />
             </Route>
             <Route path="/nonauthenticated">
               <>Please login using the "Authenticate" button</>

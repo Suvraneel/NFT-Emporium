@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useMoralis } from "react-moralis";
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
   Route,
   NavLink,
@@ -21,10 +21,10 @@ import "./style.css";
 import QuickStart from "components/QuickStart";
 import Contract from "components/Contract/Contract";
 import Text from "antd/lib/typography/Text";
-import Background from "components/diabloBG.jpg"
+import Background from "components/diabloBG.jpg";
 import CreateNFT from "components/CreateNFT/CreateNFT";
 import Forge from "components/Forge/Forge";
-import { ReactComponent as Logo } from './nftLogo.svg';
+import { ReactComponent as Logo } from "./nftLogo.svg";
 const { Header, Footer } = Layout;
 
 const styles = {
@@ -67,7 +67,14 @@ const App = ({ isServerInfo }) => {
   }, [isAuthenticated, isWeb3Enabled]);
 
   return (
-    <Layout style={{ height: "100vh", overflow: "auto", backgroundImage: `url(${Background}`, backgroundSize: 'cover'}}>
+    <Layout
+      style={{
+        height: "100vh",
+        overflow: "auto",
+        backgroundImage: `url(${Background}`,
+        backgroundSize: "cover",
+      }}
+    >
       <Router>
         <Header style={styles.header}>
           <Logo />

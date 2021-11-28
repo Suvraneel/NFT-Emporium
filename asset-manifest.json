@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/nft-emporium/static/css/main.811d9b26.chunk.css",
-    "main.js": "/nft-emporium/static/js/main.76f33adc.chunk.js",
-    "main.js.map": "/nft-emporium/static/js/main.76f33adc.chunk.js.map",
+    "main.js": "/nft-emporium/static/js/main.68ba92f0.chunk.js",
+    "main.js.map": "/nft-emporium/static/js/main.68ba92f0.chunk.js.map",
     "runtime-main.js": "/nft-emporium/static/js/runtime-main.f70d36fc.js",
     "runtime-main.js.map": "/nft-emporium/static/js/runtime-main.f70d36fc.js.map",
     "static/css/2.aa7bbd10.chunk.css": "/nft-emporium/static/css/2.aa7bbd10.chunk.css",
-    "static/js/2.9ac082d3.chunk.js": "/nft-emporium/static/js/2.9ac082d3.chunk.js",
-    "static/js/2.9ac082d3.chunk.js.map": "/nft-emporium/static/js/2.9ac082d3.chunk.js.map",
+    "static/js/2.5a4b5efc.chunk.js": "/nft-emporium/static/js/2.5a4b5efc.chunk.js",
+    "static/js/2.5a4b5efc.chunk.js.map": "/nft-emporium/static/js/2.5a4b5efc.chunk.js.map",
     "index.html": "/nft-emporium/index.html",
     "static/css/2.aa7bbd10.chunk.css.map": "/nft-emporium/static/css/2.aa7bbd10.chunk.css.map",
     "static/css/main.811d9b26.chunk.css.map": "/nft-emporium/static/css/main.811d9b26.chunk.css.map",
-    "static/js/2.9ac082d3.chunk.js.LICENSE.txt": "/nft-emporium/static/js/2.9ac082d3.chunk.js.LICENSE.txt",
+    "static/js/2.5a4b5efc.chunk.js.LICENSE.txt": "/nft-emporium/static/js/2.5a4b5efc.chunk.js.LICENSE.txt",
     "static/media/diabloBG.3f06f1bb.jpg": "/nft-emporium/static/media/diabloBG.3f06f1bb.jpg",
     "static/media/nftLogo.efd949d5.svg": "/nft-emporium/static/media/nftLogo.efd949d5.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.f70d36fc.js",
     "static/css/2.aa7bbd10.chunk.css",
-    "static/js/2.9ac082d3.chunk.js",
+    "static/js/2.5a4b5efc.chunk.js",
     "static/css/main.811d9b26.chunk.css",
-    "static/js/main.76f33adc.chunk.js"
+    "static/js/main.68ba92f0.chunk.js"
   ]
 }

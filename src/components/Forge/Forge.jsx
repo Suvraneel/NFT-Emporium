@@ -4,11 +4,11 @@ import { useMoralisDapp } from "providers/MoralisDappProvider/MoralisDappProvide
 import Web3 from "web3";
 import { useEffect, useState } from "react";
 import "./Forge.css";
+import { useMoralis } from "react-moralis";
 
 import { Card, Image, Tooltip, Modal, Input, Button } from "antd";
 import { AwesomeButtonProgress } from "react-awesome-button";
-import Chains from "components/Chains";
-import MintingChains from "components/MintingChains/Chains";
+import ForgingChain from "components/Forging Chain/Chains";
 
 const styles = {
   card: {
@@ -22,16 +22,6 @@ const styles = {
 };
 const menuItems = [
   {
-    key: "0x4",
-    value: "Rinkeby Testnet",
-    // icon: <ETHLogo />,
-  },
-  {
-    key: "0x61",
-    value: "Smart Chain Testnet",
-    // icon: <BSCLogo />,
-  },
-  {
     key: "0x13881",
     value: "Mumbai",
     // icon: <PolygonLogo />,
@@ -43,6 +33,7 @@ const Moralis = require("moralis");
 function Forge() {
   Moralis.initialize(process.env.REACT_APP_MORALIS_APPLICATION_ID);
   Moralis.serverURL = process.env.REACT_APP_MORALIS_SERVER_URL;
+  const { user } = useMoralis();
 
   async function AddLibrary(urlOfTheLibrary) {
     const script = document.createElement("script");
@@ -54,16 +45,6 @@ function Forge() {
   AddLibrary("https://unpkg.com/moralis/dist/moralis.js");
   const web3 = new Web3(window.ethereum);
 
-  // Ethereum Rinkeby 0x0Fb6EF3505b9c52Ed39595433a21aF9B5FCc4431
-  // Polygon Mumbai 0x351bbee7C6E9268A1BF741B098448477E08A0a53
-  // BSC Testnet 0x88624DD1c725C6A95E223170fa99ddB22E1C6DDD
-
-  // const login = async () => {
-  //     Moralis.Web3.authenticate().then(async (result) => {
-  //       console.log(result);
-  //       alert("Login successful");
-  //     });
-  //   };
   const { chainId } = useMoralisDapp();
   const [selected, setSelected] = useState({});
 
@@ -79,78 +60,152 @@ function Forge() {
 
   useEffect(() => {
     if (!chainId) return null;
-    if (chainId === "0x4") {
-      setNftContractAddress("0x0Fb6EF3505b9c52Ed39595433a21aF9B5FCc4431");
-      console.log("Contract Address Changed");
-    } else if (chainId === "0x61") {
-      setNftContractAddress("0x88624DD1c725C6A95E223170fa99ddB22E1C6DDD");
-      console.log("Contract Address Changed");
-    } else if (chainId === "0x13881") {
-      setNftContractAddress("0x351bbee7C6E9268A1BF741B098448477E08A0a53");
+    if (chainId === "0x13881") {
+      setNftContractAddress("0xe7f131704ac294e9c2da16c9ac335246a7fdee59");
       console.log("Contract Address Changed");
     }
   }, [chainId]);
 
-  const toTheMoon = async () => {
-    // Storing the file
-    const fileInput = document.getElementById("file");
-    const data = fileInput.files[0];
-    const imageFile = new Moralis.File(data.name, data);
-    await imageFile.saveIPFS();
+  const ABI = [
+    {
+      inputs: [],
+      stateMutability: "nonpayable",
+      type: "constructor",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "bytes32",
+          name: "requestId",
+          type: "bytes32",
+        },
+        {
+          indexed: true,
+          internalType: "uint256",
+          name: "result",
+          type: "uint256",
+        },
+      ],
+      name: "DiceLanded",
+      type: "event",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "bytes32",
+          name: "requestId",
+          type: "bytes32",
+        },
+        {
+          indexed: true,
+          internalType: "address",
+          name: "roller",
+          type: "address",
+        },
+      ],
+      name: "DiceRolled",
+      type: "event",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "sender",
+          type: "address",
+        },
+      ],
+      name: "character",
+      outputs: [
+        {
+          internalType: "string",
+          name: "",
+          type: "string",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "sender",
+          type: "address",
+        },
+      ],
+      name: "generate",
+      outputs: [
+        {
+          internalType: "bytes32",
+          name: "requestId",
+          type: "bytes32",
+        },
+      ],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [],
+      name: "randomResult",
+      outputs: [
+        {
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "bytes32",
+          name: "requestId",
+          type: "bytes32",
+        },
+        {
+          internalType: "uint256",
+          name: "randomness",
+          type: "uint256",
+        },
+      ],
+      name: "rawFulfillRandomness",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+  ];
+  var Generator = new web3.eth.Contract(ABI, nftContractAddress);
 
-    // Storing the metadata
-
-    const imageURI = imageFile.ipfs();
-    const metadata = {
-      name: document.getElementById("metadataName").value,
-      description: document.getElementById("metadataDescription").value,
-      image: imageURI,
-    };
-
-    const metadataFile = new Moralis.File("metadata.json", {
-      base64: btoa(JSON.stringify(metadata)),
-    });
-    await metadataFile.saveIPFS();
-    const metadataURI = metadataFile.ipfs();
-    console.log(metadataURI);
-    alert("Upload successful");
-
-    // minting
-
-    const txt = await mintToken(metadataURI).then((result) => {
-      console.log(result);
-      alert("Token minting done.Let it get confirmed!!");
-    });
+  const generateCharacter = async () => {
+    await window.ethereum.enable();
+    const address = user.attributes.ethAddress;
+    const gen = Generator.methods
+      .generate(address)
+      .send({
+        from: user.attributes.ethAddress,
+      })
+      .then((res) => {
+        console.log(res);
+      });
   };
-
-  async function mintToken(_uri) {
-    const encodedFunction = web3.eth.abi.encodeFunctionCall(
-      {
-        name: "mintToken",
-        type: "function",
-        inputs: [
-          {
-            type: "string",
-            name: "tokenURI",
-          },
-        ],
-      },
-      [_uri]
-    );
-
-    const transactionParameters = {
-      to: nftContractAddress,
-      // eslint-disable-next-line no-undef
-      from: ethereum.selectedAddress,
-      data: encodedFunction,
-    };
-    // eslint-disable-next-line no-undef
-    const txt = await ethereum.request({
-      method: "eth_sendTransaction",
-      params: [transactionParameters],
-    });
-    return txt;
-  }
+  let mythic;
+  const getCharacter = async () => {
+    await window.ethereum.enable();
+    const address = user.attributes.ethAddress;
+    const player = Generator.methods
+      .character(address)
+      .call()
+      .then((res) => {
+        mythic = res;
+        console.log(res);
+      });
+  };
 
   return (
     <div
@@ -169,26 +224,28 @@ function Forge() {
         title={<div>Forge Mythical Character</div>}
         size="large"
       >
-
-      <Card
-        style={styles.card}
-        bodyStyle={{ padding: "20px" }}
-        size="large"
-        style={{ width: "100%", border: "2px solid #e7eaf3" }}
-              cover={
-                <Image
-                  preview={false}
-                  src={"https://cdn.mos.cms.futurecdn.net/u8wSHMmMMXzZuAFBCmcsCK.jpg" || "error"}
-                  alt=""
-                  style={{ height: "300px" }}
-                />
+        <ForgingChain />
+        <Card
+          style={styles.card}
+          bodyStyle={{ padding: "20px" }}
+          size="large"
+          style={{ width: "100%", border: "2px solid #e7eaf3" }}
+          cover={
+            <Image
+              preview={false}
+              src={
+                "https://cdn.mos.cms.futurecdn.net/u8wSHMmMMXzZuAFBCmcsCK.jpg" ||
+                "error"
               }
-      >
-      </Card>
+              alt=""
+              style={{ height: "300px" }}
+            />
+          }
+        ></Card>
 
         <Button
           type="primary"
-          onClick={toTheMoon}
+          onClick={generateCharacter}
           style={{
             marginTop: "20px",
             width: "100%",
@@ -198,7 +255,7 @@ function Forge() {
         </Button>
         <Button
           type="primary"
-          onClick={toTheMoon}
+          onClick={getCharacter}
           style={{
             marginTop: "20px",
             width: "100%",

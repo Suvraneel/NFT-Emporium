@@ -192,19 +192,52 @@ function Forge() {
       })
       .then((res) => {
         console.log(res);
-      });
+      })
+      .then(alert("Your character is getting forged!!"));
   };
-  let mythic;
+  const [image, setImage] = useState("");
+  const [mythic, setMythic] = useState("");
+
   const getCharacter = async () => {
     await window.ethereum.enable();
+    var requestOptions = {
+      method: "GET",
+      redirect: "follow",
+    };
     const address = user.attributes.ethAddress;
-    const player = Generator.methods
+    const player = await Generator.methods
       .character(address)
       .call()
       .then((res) => {
-        mythic = res;
+        setMythic(res);
         console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
       });
+
+    await fetch(
+      "https://api.unsplash.com/search/photos?client_id=Qoxh5lBBUjQQ31Skn30wSwGtvVTLu-8tXrTB2CY8hfQ&query=" +
+        mythic,
+      requestOptions
+    )
+      .then((response) => response.json())
+      .then((result) => {
+        setImage(result.results[0].urls.regular);
+      })
+      .then(alert("Your character is " + mythic));
+
+    // get the character image
+
+    // fetch(
+
+    //   requestOptions
+    // )
+    //   .then((response) => response.json())
+    //   .then((result) => {
+    //     setImage(result.results[0].urls.regular);
+    //     console.log(result.results[0].urls.regular);
+    //   });
   };
 
   return (
@@ -233,10 +266,7 @@ function Forge() {
           cover={
             <Image
               preview={false}
-              src={
-                "https://cdn.mos.cms.futurecdn.net/u8wSHMmMMXzZuAFBCmcsCK.jpg" ||
-                "error"
-              }
+              src={image || "error"}
               alt=""
               style={{ height: "300px" }}
             />

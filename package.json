@@ -1,5 +1,6 @@
 {
   "name": "ethereum-boilerplate",
+  "homepage": "https://nft-cryptonaut.github.io/nft-emporium/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -10,6 +11,7 @@
     "@walletconnect/web3-provider": "^1.6.6",
     "antd": "^4.16.13",
     "moralis": "^0.0.118",
+    "gh-pages": "^3.2.3",
     "react": "^17.0.2",
     "react-awesome-button": "^6.5.1",
     "react-blockies": "^1.4.1",
@@ -24,13 +26,14 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts --openssl-legacy-provider build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "devchain": "node Truffle/scripts/devChain.js",
     "connect": "moralis-admin-cli connect-local-devchain",
     "watch:events": "moralis-admin-cli add-contract",
-    "deploy": "node Truffle/scripts/deployContract.js"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [

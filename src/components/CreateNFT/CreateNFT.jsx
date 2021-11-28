@@ -1,11 +1,14 @@
 import React from "react";
 import { AwesomeButton } from "react-awesome-button";
+import { useMoralisDapp } from "providers/MoralisDappProvider/MoralisDappProvider";
 import Web3 from "web3";
+import { useEffect, useState } from "react";
 import "./CreateNFT.css";
 
 import { Card, Image, Tooltip, Modal, Input, Button } from "antd";
 import { AwesomeButtonProgress } from "react-awesome-button";
 import Chains from "components/Chains";
+import MintingChains from "components/MintingChains/Chains";
 
 const styles = {
   card: {
@@ -17,7 +20,23 @@ const styles = {
     alignItems: "center",
   },
 };
-
+const menuItems = [
+  {
+    key: "0x4",
+    value: "Rinkeby Testnet",
+    // icon: <ETHLogo />,
+  },
+  {
+    key: "0x61",
+    value: "Smart Chain Testnet",
+    // icon: <BSCLogo />,
+  },
+  {
+    key: "0x13881",
+    value: "Mumbai",
+    // icon: <PolygonLogo />,
+  },
+];
 
 const Moralis = require("moralis");
 
@@ -35,8 +54,6 @@ function CreateNFT() {
   AddLibrary("https://unpkg.com/moralis/dist/moralis.js");
   const web3 = new Web3(window.ethereum);
 
-  const nftContractAddress = "0x351bbee7C6E9268A1BF741B098448477E08A0a53"; // Make this variable
-
   // Ethereum Rinkeby 0x0Fb6EF3505b9c52Ed39595433a21aF9B5FCc4431
   // Polygon Mumbai 0x351bbee7C6E9268A1BF741B098448477E08A0a53
   // BSC Testnet 0x88624DD1c725C6A95E223170fa99ddB22E1C6DDD
@@ -47,6 +64,32 @@ function CreateNFT() {
   //       alert("Login successful");
   //     });
   //   };
+  const { chainId } = useMoralisDapp();
+  const [selected, setSelected] = useState({});
+
+  useEffect(() => {
+    if (!chainId) return null;
+    const newSelected = menuItems.find((item) => item.key === chainId);
+    setSelected(newSelected);
+    console.log("current chainId: ", chainId);
+  }, [chainId]);
+
+  // set the value of nftcontract address as per the selected chain
+  const [nftContractAddress, setNftContractAddress] = useState({});
+
+  useEffect(() => {
+    if (!chainId) return null;
+    if (chainId === "0x4") {
+      setNftContractAddress("0x0Fb6EF3505b9c52Ed39595433a21aF9B5FCc4431");
+      console.log("Contract Address Changed");
+    } else if (chainId === "0x61") {
+      setNftContractAddress("0x88624DD1c725C6A95E223170fa99ddB22E1C6DDD");
+      console.log("Contract Address Changed");
+    } else if (chainId === "0x13881") {
+      setNftContractAddress("0x351bbee7C6E9268A1BF741B098448477E08A0a53");
+      console.log("Contract Address Changed");
+    }
+  }, [chainId]);
 
   const toTheMoon = async () => {
     // Storing the file
@@ -56,14 +99,13 @@ function CreateNFT() {
     await imageFile.saveIPFS();
 
     // Storing the metadata
-    
+
     const imageURI = imageFile.ipfs();
     const metadata = {
       name: document.getElementById("metadataName").value,
       description: document.getElementById("metadataDescription").value,
       image: imageURI,
     };
-
 
     const metadataFile = new Moralis.File("metadata.json", {
       base64: btoa(JSON.stringify(metadata)),
@@ -77,7 +119,7 @@ function CreateNFT() {
 
     const txt = await mintToken(metadataURI).then((result) => {
       console.log(result);
-      alert("Token minted");
+      alert("Token minting done.Let it get confirmed!!");
     });
   };
 
@@ -111,7 +153,6 @@ function CreateNFT() {
   }
 
   return (
-
     <div
       style={{
         width: "100%",
@@ -125,13 +166,9 @@ function CreateNFT() {
       <Card
         style={styles.card}
         bodyStyle={{ padding: "18px" }}
-        title={<div>IPFS Demo</div>}
-
+        title={<div>Lightning NFT Network</div>}
         size="large"
       >
-        {/* <AwesomeButton type="secondary" id="btn-login" onclick={login}>
-				Moralis Login
-			</AwesomeButton> */}
         <Input
           type="text"
           name="metadataName"
@@ -151,12 +188,19 @@ function CreateNFT() {
         <Input type="file" name="fileInput" id="file" placeholder="File" />
         <br />
         <br />
-        <Chains />
+        <MintingChains />
         <br />
 
-        <AwesomeButtonProgress type="primary" onPress={toTheMoon}>
-          To the Moon
-        </AwesomeButtonProgress>
+        <Button
+          type="primary"
+          onClick={toTheMoon}
+          style={{
+            marginTop: "10px",
+            width: "100%",
+          }}
+        >
+          Mint Token
+        </Button>
       </Card>
     </div>
   );

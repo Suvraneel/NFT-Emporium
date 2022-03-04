@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/NFT-Emporium/static/css/main.9a0790b5.chunk.css",
-    "main.js": "/NFT-Emporium/static/js/main.164e23a1.chunk.js",
-    "main.js.map": "/NFT-Emporium/static/js/main.164e23a1.chunk.js.map",
-    "runtime-main.js": "/NFT-Emporium/static/js/runtime-main.7e0de92a.js",
-    "runtime-main.js.map": "/NFT-Emporium/static/js/runtime-main.7e0de92a.js.map",
+    "main.js": "/NFT-Emporium/static/js/main.14c59398.chunk.js",
+    "main.js.map": "/NFT-Emporium/static/js/main.14c59398.chunk.js.map",
+    "runtime-main.js": "/NFT-Emporium/static/js/runtime-main.a9361a59.js",
+    "runtime-main.js.map": "/NFT-Emporium/static/js/runtime-main.a9361a59.js.map",
     "static/css/2.aa7bbd10.chunk.css": "/NFT-Emporium/static/css/2.aa7bbd10.chunk.css",
-    "static/js/2.73be2ac2.chunk.js": "/NFT-Emporium/static/js/2.73be2ac2.chunk.js",
-    "static/js/2.73be2ac2.chunk.js.map": "/NFT-Emporium/static/js/2.73be2ac2.chunk.js.map",
+    "static/js/2.c5619771.chunk.js": "/NFT-Emporium/static/js/2.c5619771.chunk.js",
+    "static/js/2.c5619771.chunk.js.map": "/NFT-Emporium/static/js/2.c5619771.chunk.js.map",
     "index.html": "/NFT-Emporium/index.html",
     "static/css/2.aa7bbd10.chunk.css.map": "/NFT-Emporium/static/css/2.aa7bbd10.chunk.css.map",
     "static/css/main.9a0790b5.chunk.css.map": "/NFT-Emporium/static/css/main.9a0790b5.chunk.css.map",
-    "static/js/2.73be2ac2.chunk.js.LICENSE.txt": "/NFT-Emporium/static/js/2.73be2ac2.chunk.js.LICENSE.txt",
+    "static/js/2.c5619771.chunk.js.LICENSE.txt": "/NFT-Emporium/static/js/2.c5619771.chunk.js.LICENSE.txt",
     "static/media/diabloBG.3f06f1bb.jpg": "/NFT-Emporium/static/media/diabloBG.3f06f1bb.jpg",
     "static/media/nftLogo.efd949d5.svg": "/NFT-Emporium/static/media/nftLogo.efd949d5.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.7e0de92a.js",
+    "static/js/runtime-main.a9361a59.js",
     "static/css/2.aa7bbd10.chunk.css",
-    "static/js/2.73be2ac2.chunk.js",
+    "static/js/2.c5619771.chunk.js",
     "static/css/main.9a0790b5.chunk.css",
-    "static/js/main.164e23a1.chunk.js"
+    "static/js/main.14c59398.chunk.js"
   ]
 }

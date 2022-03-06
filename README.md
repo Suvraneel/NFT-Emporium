@@ -22,7 +22,7 @@ Along with the Lighting NFT Minter, we also added a game where each wallet can g
 We used Moralis as our backend which did our work of getting the simple jobs such as User Authentication and getting user data according to the wallet address such as what NFTs the user holds. We used Solidity Smart Contracts to mint NFTs, we deployed them on multiple blockchains and stored them. 
 We are using the Randomness feature given by Chainlink to generate the random characters for each wallet that have logged in to our application. 
 
-## Challenges we ran into
+<!-- ## Challenges we ran into
 
 - Learning Solidity
 - Integrating Smart Contracts with Web3JS 
@@ -31,10 +31,13 @@ We are using the Randomness feature given by Chainlink to generate the random ch
 ## Accomplishments that we're proud of
 
 - Providing and production built website, obviously, more features can be added but we are proud of creating the first version. 
-- Learning Solidity quickly and leveraging the power of Smart Contracts
+- Learning Solidity quickly and leveraging the power of Smart Contracts -->
 
 ## What's next for NFT Emporium 
 
+- Improving the UI
+- Populating the categories
+- Making it user friendly for mobile & other devices
 - Adding more chains to the application 
 - Adding more fun game pages
 

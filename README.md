@@ -5,7 +5,34 @@
 
 [Video Presentation](https://www.youtube.com/watch?v=5kWyemtuUMQ)
 
+This boilerplate is built on [react-moralis](https://github.com/MoralisWeb3/react-moralis) and [Moralis](https://moralis.io?utm_source=github&utm_medium=readme&utm_campaign=ethereum-boilerplate). Also has its own context provider for quick access to `chainId` or `ethAddress`
 
+There are many components in this that do not require an active web3 provider, they use Moralis Web3 API. Moralis supports the most popular blockchains and their test networks. You can find a list of all available networks in [Moralis Supported Chains](https://docs.moralis.io/moralis-server/web3-sdk/intro#supported-chains)
+
+Please check the [official documentation of Moralis](https://docs.moralis.io/#user) for all the functionalities of Moralis.
+
+![preview_init](https://user-images.githubusercontent.com/63473496/141360201-4ad46d74-03bd-4337-8a61-7443b8f738a1.gif)
+
+# 🚀 Quick Start
+
+📄 Clone or fork:
+```sh
+git clone https://github.com/NFT-Cryptonaut/NFT-Emporium
+```
+💿 Install all dependencies inside repo:
+```sh
+yarn install 
+```
+✏ Rename `.env.example` to `.env` in the main folder and provide your `appId` and `serverUrl` from Moralis ([How to start Moralis Server](https://docs.moralis.io/moralis-server/getting-started/create-a-moralis-server)) 
+Example:
+```jsx
+REACT_APP_MORALIS_APPLICATION_ID = xxxxxxxxxxxx
+REACT_APP_MORALIS_SERVER_URL = https://xxxxxx.grandmoralis.com:3000/server
+```
+🚴‍♂️ Run your App:
+```sh
+yarn start
+```
 
 ## Inspiration
 
@@ -40,34 +67,5 @@ We are using the Randomness feature given by Chainlink to generate the random ch
 - Making it user friendly for mobile & other devices
 - Adding more chains to the application 
 - Adding more fun game pages
-
-This boilerplate is built on [react-moralis](https://github.com/MoralisWeb3/react-moralis) and [Moralis](https://moralis.io?utm_source=github&utm_medium=readme&utm_campaign=ethereum-boilerplate). Also has its own context provider for quick access to `chainId` or `ethAddress`
-
-There are many components in this that do not require an active web3 provider, they use Moralis Web3 API. Moralis supports the most popular blockchains and their test networks. You can find a list of all available networks in [Moralis Supported Chains](https://docs.moralis.io/moralis-server/web3-sdk/intro#supported-chains)
-
-Please check the [official documentation of Moralis](https://docs.moralis.io/#user) for all the functionalities of Moralis.
-
-![preview_init](https://user-images.githubusercontent.com/63473496/141360201-4ad46d74-03bd-4337-8a61-7443b8f738a1.gif)
-
-# 🚀 Quick Start
-
-📄 Clone or fork:
-```sh
-git clone https://github.com/NFT-Cryptonaut/NFT-Emporium
-```
-💿 Install all dependencies inside repo:
-```sh
-yarn install 
-```
-✏ Rename `.env.example` to `.env` in the main folder and provide your `appId` and `serverUrl` from Moralis ([How to start Moralis Server](https://docs.moralis.io/moralis-server/getting-started/create-a-moralis-server)) 
-Example:
-```jsx
-REACT_APP_MORALIS_APPLICATION_ID = xxxxxxxxxxxx
-REACT_APP_MORALIS_SERVER_URL = https://xxxxxx.grandmoralis.com:3000/server
-```
-🚴‍♂️ Run your App:
-```sh
-yarn start
-```
 
 

@@ -73,7 +73,7 @@ function CreateNFT() {
     setSelected(newSelected);
     console.log("current chainId: ", chainId);
   }, [chainId]);
-
+  
   // set the value of nftcontract address as per the selected chain
   const [nftContractAddress, setNftContractAddress] = useState({});
 
@@ -206,6 +206,6 @@ function CreateNFT() {
   );
 }
 
-// onClick={document.getElementById("metadataName").value && document.getElementById("metadataDescription").value && document.getElementById("file").value ? toTheMoon : alert("hell")}
+// onClick={document.getElementById("metadataName").value && document.getElementById("metadataDescription").value && document.getElementById("file").value ? toTheMoon : alert("hell")}//
 
 export default CreateNFT;

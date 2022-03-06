@@ -34,5 +34,5 @@ body:
       label: Code of Conduct
       description: By submitting this issue, you agree to follow our [Code of Conduct]()
       options:
-        - label: I follow [Contributing Guidelines]() & [Code of conduct]() of this project.
+        - label: I follow [Contributing Guidelines](https://github.com/NFT-Cryptonaut/NFT-Emporium/blob/main/CONTRIBUTING.md) & [Code of conduct](https://github.com/NFT-Cryptonaut/NFT-Emporium/blob/main/CODE_OF_CONDUCT.md) of this project.
           required: true

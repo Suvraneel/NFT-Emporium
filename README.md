@@ -1,7 +1,7 @@
 # `NFT-Emporium`
 
 
-[NFT Emporium](https://nft-cryptonaut.github.io/NFT-Emporium/#/wallet)
+[NFT Emporium](https://suvraneel.github.io/NFT-Emporium/#/wallet)
 
 [Video Presentation](https://www.youtube.com/watch?v=5kWyemtuUMQ)
 

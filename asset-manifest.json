@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/NFT-Emporium/static/css/main.9a0790b5.chunk.css",
-    "main.js": "/NFT-Emporium/static/js/main.14c59398.chunk.js",
-    "main.js.map": "/NFT-Emporium/static/js/main.14c59398.chunk.js.map",
+    "main.js": "/NFT-Emporium/static/js/main.10f81e00.chunk.js",
+    "main.js.map": "/NFT-Emporium/static/js/main.10f81e00.chunk.js.map",
     "runtime-main.js": "/NFT-Emporium/static/js/runtime-main.a9361a59.js",
     "runtime-main.js.map": "/NFT-Emporium/static/js/runtime-main.a9361a59.js.map",
     "static/css/2.aa7bbd10.chunk.css": "/NFT-Emporium/static/css/2.aa7bbd10.chunk.css",
@@ -20,6 +20,6 @@
     "static/css/2.aa7bbd10.chunk.css",
     "static/js/2.c5619771.chunk.js",
     "static/css/main.9a0790b5.chunk.css",
-    "static/js/main.14c59398.chunk.js"
+    "static/js/main.10f81e00.chunk.js"
   ]
 }

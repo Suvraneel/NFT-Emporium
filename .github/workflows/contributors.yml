@@ -15,4 +15,4 @@ jobs:
               with:
                   readme_path: "CONTRIBUTORS.md"
               env:
-                  GITHUB_TOKEN: ${{ secrets.PAT }}
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
